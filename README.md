@@ -9,16 +9,19 @@
 ## USAGE
 
 ```sh
-[tz:.../tools/pyscanner]$ python3 scanner.py --help
-usage: scanner.py [-h] -t TARGET [-p PORT]
+[oxdev:.../tools/pyscanner]$ python3 -OO scanner.py -h            
 
-Port Scanner
+usage: scanner.py [-h] -t TARGET [-p PORT [PORT ...]] [-f]
+
+A Python Multithreaded TCP Port Scanner
 
 optional arguments:
   -h, --help            show this help message and exit
   -t TARGET, --target TARGET
                         Target IP address
-  -p PORT, --port PORT  Target port or ports
+  -p PORT [PORT ...], --port PORT [PORT ...]
+                        Specify a port to knock
+  -f, --fast            Fast Scan, the top 1k ports
 
 ```
 
@@ -28,7 +31,7 @@ use the host name or IP adress as an arg
 
 ```sh
 
-[tz:.../tools/pyscanner]$ python3 scanner.py -t scanme.nmap.org
+[tz:.../tools/pyscanner]$ python3 -OO scanner.py -t <IP>
 
 ```
 
@@ -36,14 +39,14 @@ use the host name or IP adress as an arg
 
 ```sh
 
-[tz:.../tools/pyscanner]$ python3 scanner.py -t <IP> -p 22 80 587 ...
+[tz:.../tools/pyscanner]$ python3 -OO scanner.py -t <IP> -p 22 80 587 ...
 
 ```
 ### fast scan 
 
 -f flag to scann the top used TPC ports 
 ```bash
-[tz:.../tools/pyscanner]$ python3 -OO scanner.py -t 192.168.1.7 -f
+[tz:.../tools/pyscanner]$ python3 -OO scanner.py -t <IP> -f
 
 ```
 
